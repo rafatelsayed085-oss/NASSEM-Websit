@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نسيم | NASEEM</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f5f8fc;
+  color: #142b45;
+  line-height: 1.8;
+}
+
+:root {
+  --navy: #092b49;
+  --blue: #087eae;
+  --cyan: #19c4df;
+  --green: #13b981;
+}
+
+header {
+  background: white;
+  padding: 15px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 20px #092b4910;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.logo span {
+  color: var(--navy);
+  font-size: 13px;
+  display: block;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--navy);
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+nav a:hover { color: var(--blue); }
+
+.hero {
+  min-height: 520px;
+  padding: 85px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 15% 20%, #19c4df55, transparent 30%),
+    linear-gradient(120deg, #071f38, #075477 65%, #087eae);
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 17px;
+  border: 1px solid #ffffff55;
+  border-radius: 30px;
+  color: #b8f4ff;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.hero h1 {
+  font-size: 47px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.hero h1 span { color: #40e0f0; }
+
+.hero p {
+  color: #e1eff7;
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  transition: .3s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+.whatsapp {
+  background: var(--green);
+  color: white;
+}
+
+.phone {
+  background: white;
+  color: var(--navy);
+}
+
+.hero-icon {
+  font-size: 150px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: 7%;
+  filter: drop-shadow(0 15px 25px #0005);
+}
+
+section {
+  padding: 75px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  color: var(--navy);
+}
+
+.section-title p { color: #77899a; }
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 30px 22px;
+  border-radius: 17px;
+  box-shadow: 0 8px 30px #092b490d;
+  transition: .3s;
+  border: 1px solid #eaf0f5;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px #092b4918;
+}
+
+.card .icon {
+  font-size: 43px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #718294;
+  font-size: 14px;
+}
+
+.why {
+  background: #eaf5fa;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.feature {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.feature b {
+  display: block;
+  color: var(--navy);
+  font-size: 18px;
+}
+
+.feature span { font-size: 35px; }
+
+.offer {
+  text-align: center;
+  background: linear-gradient(120deg, #092b49, #087eae);
+  color: white;
+  border-radius: 22px;
+  padding: 45px 20px;
+}
+
+.offer h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.offer p { color: #d6ecf7; }
+
+.contact {
+  text-align: center;
+  background: white;
+}
+
+.contact h2 {
+  font-size: 30px;
+  color: var(--navy);
+  margin-bottom: 15px;
+}
+
+footer {
+  background: #071f38;
+  color: white;
+  text-align: center;
+  padding: 28px;
+}
+
+footer p { color: #b9cedd; }
+
+.float-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 20;
+}
+
+.float-buttons a {
+  text-decoration: none;
+  color: white;
+  padding: 12px 17px;
+  border-radius: 35px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px #0003;
+}
+
+.float-wa { background: #13b981; }
+.float-call { background: #087eae; }
+
+@media(max-width:750px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a { margin: 0 5px; font-size: 12px; }
+
+  .hero {
+    text-align: center;
+    padding: 65px 7%;
+  }
+
+  .hero h1 { font-size: 33px; }
+
+  .hero-icon {
+    display: none;
+  }
+
+  section { padding: 55px 6%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    نسيم
+    <span>NASEEM</span>
+  </div>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#why">لماذا نسيم؟</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">❄️ الراحة تبدأ من نسيم</div>
+
+    <h1>
+      هواء نقي وراحة
+      <span>تدوم</span>
+    </h1>
+
+    <p>
+      خدمات تنظيف وصيانة المكيفات باحترافية
+      واهتمام بأدق التفاصيل.
+      راحتك وجودة الهواء أولويتنا.
+    </p>
+
+    <a class="btn whatsapp"
+       href="https://wa.me/966574120329">
+       احجز عبر واتساب
+    </a>
+
+    <a class="btn phone"
+       href="tel:+966574120329">
+       اتصل الآن
+    </a>
+  </div>
+
+  <div class="hero-icon">❄️</div>
+</div>
+
+<section id="services">
+  <div class="section-title">
+    <h2>خدماتنا</h2>
+    <p>كل ما يحتاجه منزلك في مكان واحد</p>
+  </div>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">❄️</div>
+      <h3>تنظيف المكيفات</h3>
+      <p>تنظيف شامل للمكيفات والعناية بمكوناتها لتحسين جودة الهواء.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h3>صيانة المكيفات</h3>
+      <p>فحص الأعطال ومعالجة مشكلات التبريد والأصوات.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>تنظيف المجالس</h3>
+      <p>العناية بالمجالس وتنظيفها باهتمام واحترافية.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-title">
+    <h2>لماذا تختار نسيم؟</h2>
+    <p>نهتم براحتك في كل خطوة</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <span>⭐</span>
+      <b>جودة في الخدمة</b>
+      <p>اهتمام بالتفاصيل</p>
+    </div>
+
+    <div class="feature">
+      <span>⏱️</span>
+      <b>سهولة الحجز</b>
+      <p>تواصل مباشر وسريع</p>
+    </div>
+
+    <div class="feature">
+      <span>🤝</span>
+      <b>اهتمام بالعميل</b>
+      <p>خدمة تهتم براحتك</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="offer">
+    <h2>مكيفك يحتاج عناية؟</h2>
+    <p>تواصل معنا واحجز خدمتك الآن</p>
+
+    <a class="btn whatsapp"
+       href="https://wa.me/966574120329">
+       احجز موعدك الآن
+    </a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>تواصل مع نسيم</h2>
+  <p>يسعدنا استقبال استفساراتكم وحجوزاتكم</p>
+
+  <a class="btn whatsapp"
+     href="https://wa.me/966574120329">
+     واتساب
+  </a>
+
+  <a class="btn phone"
+     href="tel:+966574120329">
+     اتصال
+  </a>
+</section>
+
+<footer>
+  <h2>نسيم | NASEEM</h2>
+  <p>هواء نقي وراحة تدوم</p>
+  <p>جميع الحقوق محفوظة © 2026</p>
+</footer>
+
+<div class="float-buttons">
+  <a class="float-wa"
+     href="https://wa.me/966574120329">واتساب</a>
+
+  <a class="float-call"
+     href="tel:+966574120329">اتصال</a>
+</div>
+
+</body>
+</html>
